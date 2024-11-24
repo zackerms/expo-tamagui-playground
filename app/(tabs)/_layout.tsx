@@ -20,6 +20,14 @@ export default function TabLayout() {
                 name="index"
                 options={{
                     title: "Home",
+                    headerShown: true,
+                }}
+            />
+            <Tabs.Screen
+                name="full"
+                options={{
+                    title: "Full",
+                    headerShown: false,
                 }}
             />
         </Tabs>
