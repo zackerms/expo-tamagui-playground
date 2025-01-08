@@ -12,21 +12,19 @@ import { useSafeAreaInsets } from "react-native-safe-area-context"
 export function AppToastProvider({ children }: { children?: ReactNode }) {
     const { left, top, right } = useSafeAreaInsets()
     return (
-        <>
+        <ToastProvider burntOptions={{ from: "bottom" }}>
             <PortalProvider shouldAddRootHost>
                 {children}
-                <ToastProvider burntOptions={{ from: "bottom" }}>
-                    <ToastComponent />
-                    <ToastViewport
-                        portalToRoot={false}
-                        zIndex={2}
-                        top={top + 16}
-                        left={left + 16}
-                        right={right + 16}
-                    />
-                </ToastProvider>
+                <ToastComponent />
+                <ToastViewport
+                    portalToRoot={false}
+                    zIndex={2}
+                    top={top + 16}
+                    left={left + 16}
+                    right={right + 16}
+                />
             </PortalProvider>
-        </>
+        </ToastProvider>
     )
 }
 
