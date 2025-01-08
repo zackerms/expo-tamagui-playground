@@ -13,9 +13,9 @@ export function AppToastProvider({ children }: { children?: ReactNode }) {
     const { left, top, right } = useSafeAreaInsets()
     return (
         <>
-            <ToastProvider burntOptions={{ from: "bottom" }}>
-                <PortalProvider shouldAddRootHost={false}>
-                    {children}
+            <PortalProvider shouldAddRootHost>
+                {children}
+                <ToastProvider burntOptions={{ from: "bottom" }}>
                     <ToastComponent />
                     <ToastViewport
                         portalToRoot={false}
@@ -24,8 +24,8 @@ export function AppToastProvider({ children }: { children?: ReactNode }) {
                         left={left + 16}
                         right={right + 16}
                     />
-                </PortalProvider>
-            </ToastProvider>
+                </ToastProvider >
+            </PortalProvider>
         </>
     )
 }
