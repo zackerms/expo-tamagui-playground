@@ -24,7 +24,7 @@ export function AppToastProvider({ children }: { children?: ReactNode }) {
                         left={left + 16}
                         right={right + 16}
                     />
-                </ToastProvider >
+                </ToastProvider>
             </PortalProvider>
         </>
     )

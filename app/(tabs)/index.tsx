@@ -1,7 +1,7 @@
 import { useToastController } from "@tamagui/toast"
 import { ReactNode, useState } from "react"
 import { Alert } from "react-native"
-import { Text, YStack, Button, ScrollView, Dialog } from "tamagui"
+import { Text, YStack, Button, ScrollView, Dialog, Popover } from "tamagui"
 
 export default function HomeScreen() {
     return (
@@ -20,6 +20,7 @@ export default function HomeScreen() {
             </Section>
             <SectionToast />
             <SectionDialog />
+            <SectionPopOver />
         </ScrollView>
     )
 }
@@ -112,6 +113,49 @@ function SectionDialog() {
                     </Dialog.Content>
                 </Dialog.Portal>
             </Dialog>
+        </Section>
+    )
+}
+
+function SectionPopOver() {
+    return (
+        <Section title="PopOver">
+            <Popover placement="top-end" offset={{ mainAxis: 16 }}>
+                <Popover.Trigger asChild>
+                    <Button color="white" backgroundColor="$blue10">
+                        Show Popover
+                    </Button>
+                </Popover.Trigger>
+
+                <Popover.Content
+                    backgroundColor="white"
+                    shadowColor="#96a3b31a"
+                    shadowOffset={{ width: 0, height: 8 }}
+                    shadowRadius={28}
+                    borderRadius={16}
+                    padding={0}
+                    enterStyle={{ y: 10, opacity: 0 }}
+                    exitStyle={{ y: 10, opacity: 0 }}
+                    animation={[
+                        "quickest",
+                        {
+                            opacity: {
+                                overshootClamping: true,
+                            },
+                        },
+                    ]}
+                >
+                    <YStack gap={8} padding={16}>
+                        <Text fontSize={16} fontWeight="bold">
+                            Popover
+                        </Text>
+                        <Text fontSize={14}>
+                            This is a popover. It can be placed in any
+                            direction.
+                        </Text>
+                    </YStack>
+                </Popover.Content>
+            </Popover>
         </Section>
     )
 }
