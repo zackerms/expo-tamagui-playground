@@ -1,7 +1,7 @@
 import { useToastController } from "@tamagui/toast"
-import { ReactNode } from "react"
+import { ReactNode, useState } from "react"
 import { Alert } from "react-native"
-import { Text, YStack, Button, ScrollView } from "tamagui"
+import { Text, YStack, Button, ScrollView, Dialog } from "tamagui"
 
 export default function HomeScreen() {
     return (
@@ -19,6 +19,7 @@ export default function HomeScreen() {
                 </Button>
             </Section>
             <SectionToast />
+            <SectionDialog />
         </ScrollView>
     )
 }
@@ -76,6 +77,41 @@ function SectionToast() {
                     Error
                 </Button>
             </YStack>
+        </Section>
+    )
+}
+
+function SectionDialog() {
+    const [isOpen, setIsOpen] = useState(false)
+    return (
+        <Section title="Dialog">
+            <Button
+                color="white"
+                backgroundColor="$blue10"
+                onPress={() => setIsOpen(true)}
+            >
+                Open Dialog
+            </Button>
+            <Dialog modal={true} open={isOpen} onOpenChange={setIsOpen}>
+                <Dialog.Portal>
+                    <Dialog.Overlay key="overlay" />
+                    <Dialog.Content key="content" backgroundColor="white">
+                        <YStack padding={16} gap={16}>
+                            <Text fontSize={20} fontWeight="bold">
+                                Dialog
+                            </Text>
+                            <Text>This is a dialog</Text>
+                            <Button
+                                color="white"
+                                backgroundColor="$blue10"
+                                onPress={() => setIsOpen(false)}
+                            >
+                                Close
+                            </Button>
+                        </YStack>
+                    </Dialog.Content>
+                </Dialog.Portal>
+            </Dialog>
         </Section>
     )
 }

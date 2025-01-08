@@ -1,13 +1,10 @@
 import { useToastController } from "@tamagui/toast"
 import { ReactNode } from "react"
-import {Text, YStack, Button, Image, View} from "tamagui"
+import { Text, YStack, Button, Image, View } from "tamagui"
 
 export default function HomeScreen() {
     return (
-        <View
-            flex={1}
-            backgroundColor="black"
-        >
+        <View flex={1} backgroundColor="black">
             <Image
                 src="https://picsum.photos/1000"
                 w="100%"
