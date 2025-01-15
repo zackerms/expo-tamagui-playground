@@ -6,9 +6,6 @@ import { Text, YStack, Button, ScrollView, Dialog, Popover } from "tamagui"
 export default function HomeScreen() {
     return (
         <ScrollView paddingVertical={32} flex={1}>
-            <Text fontSize={32} fontWeight="bold" w="100%" textAlign="center">
-                Expo 🤝 Tamagui
-            </Text>
             <Section title="Button">
                 <Button
                     color="white"
