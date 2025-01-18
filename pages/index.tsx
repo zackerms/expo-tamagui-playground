@@ -3,6 +3,7 @@ import { Section } from "components/Section"
 import { SectionToast } from "components/SectionToast"
 import { SectionDialog } from "components/SectionDialog"
 import { SectionPopOver } from "components/SectionPopOver"
+import { SectionNavigation } from "components/SectionNavigation"
 
 export default function Page() {
     return (
@@ -19,6 +20,7 @@ export default function Page() {
             <SectionToast />
             <SectionDialog />
             <SectionPopOver />
+            <SectionNavigation />
         </YStack>
     )
 }

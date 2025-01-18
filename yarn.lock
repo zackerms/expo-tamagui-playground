@@ -1374,6 +1374,11 @@
   resolved "https://registry.yarnpkg.com/@expo/metro-runtime/-/metro-runtime-3.2.3.tgz#e074c28084f30725f8d0d0eeee4fcd6074797d2d"
   integrity sha512-v5ji+fAGi7B9YavrxvekuF8gXEV/5fz0+PhaED5AaFDnbGB4IJIbpaiqK9nqZV1axjGZNQSw6Q8TsnFetCR3bQ==
 
+"@expo/next-adapter@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@expo/next-adapter/-/next-adapter-6.0.0.tgz#bb9f165c953cd8497a64c769a566e8603fb881bd"
+  integrity sha512-hFAcH6OLIOkLeD0oCoozqcTAxcPK1wYsZO40NSWA+Bi25hF9h/Az6SlLSNOtYv+tyCF5iAHT/rwWsDNlUyxDmg==
+
 "@expo/osascript@^2.0.31":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@expo/osascript/-/osascript-2.1.4.tgz#4918d16ba09d8b01cb393bc5997055e61d31246f"
@@ -5496,7 +5501,7 @@ end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-enhanced-resolve@^5.17.1:
+enhanced-resolve@^5.10.0, enhanced-resolve@^5.17.1:
   version "5.18.0"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.18.0.tgz#91eb1db193896b9801251eeff1c6980278b1e404"
   integrity sha512-0/r0MySGYG8YqlayBZ6MuCfECmHFdJ5qyPh8s8wa5Hnm6SaFLSK1VYCbj+NKp090Nm1caZhD+QTnmxO7esYGyQ==
@@ -8094,6 +8099,18 @@ nested-error-stacks@~2.0.1:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.0.1.tgz#d2cc9fc5235ddb371fc44d506234339c8e4b0a4b"
   integrity sha512-SrQrok4CATudVzBS7coSz26QRSmlK9TzzoFbeKfcPBUFPjcQM9Rqvr/DlJkOrwI/0KcgvMub1n1g5Jt9EgRn4A==
 
+next-compose-plugins@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.1.tgz#020fc53f275a7e719d62521bef4300fbb6fde5ab"
+  integrity sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==
+
+next-transpile-modules@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-10.0.1.tgz#1ca2b735b14781f4792f6214f808b600574e0348"
+  integrity sha512-4VX/LCMofxIYAVV58UmD+kr8jQflpLWvas/BQ4Co0qWLWzVh06FoZkECkrX5eEZT6oJFqie6+kfbTA3EZCVtdQ==
+  dependencies:
+    enhanced-resolve "^5.10.0"
+
 next@^15.1.5:
   version "15.1.5"
   resolved "https://registry.yarnpkg.com/next/-/next-15.1.5.tgz#80972a606d17ead86323d3405abf3bd3e2c894c8"
@@ -9725,6 +9742,13 @@ slugify@^1.3.4, slugify@^1.6.6:
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.6.tgz#2d4ac0eacb47add6af9e04d3be79319cbcc7924b"
   integrity sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==
 
+solito@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/solito/-/solito-4.3.0.tgz#85570da5294e9d61021386e259297510849212f9"
+  integrity sha512-vxCSTAJfTadlHVPlu2EUJSO00/abzQh7cUHSb0VP+pWsaIFCZShsh2P7taHCaMqUvqOp46MCYnoXrSjTxa91QA==
+  dependencies:
+    typescript "^5.0.4"
+
 sonner@^0.3.5:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/sonner/-/sonner-0.3.5.tgz#5ef175732cb7b637c6460620ab01a0fba0e6a36b"
@@ -10415,7 +10439,7 @@ typedarray.prototype.slice@^1.0.3:
     typed-array-buffer "^1.0.3"
     typed-array-byte-offset "^1.0.4"
 
-typescript@^5.6.3:
+typescript@^5.0.4, typescript@^5.6.3:
   version "5.7.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.3.tgz#919b44a7dbb8583a9b856d162be24a54bf80073e"
   integrity sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==

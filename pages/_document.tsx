@@ -4,13 +4,13 @@ import NextDocument, {
     Html,
     Main,
     NextScript,
-} from 'next/document'
+} from "next/document"
 
-import {tamaguiConfig} from "tamagui.config";
+import { tamaguiConfig } from "tamagui.config"
 
 export default class Document extends NextDocument {
     static async getInitialProps(ctx: DocumentContext) {
-        const initialProps = await NextDocument.getInitialProps(ctx);
+        const initialProps = await NextDocument.getInitialProps(ctx)
         return {
             ...initialProps,
             styles: (
@@ -32,8 +32,8 @@ export default class Document extends NextDocument {
                     <meta name="color-scheme" content="light dark" />
                 </Head>
                 <body>
-                <Main />
-                <NextScript />
+                    <Main />
+                    <NextScript />
                 </body>
             </Html>
         )
