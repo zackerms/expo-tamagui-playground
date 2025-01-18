@@ -6,8 +6,8 @@ import { StatusBar } from "expo-status-bar"
 import React, { useEffect, useState } from "react"
 import "react-native-reanimated"
 import { TamaguiProvider } from "@tamagui/core"
-import { AppToastProvider } from "@/components/AppToastProvider"
-import { tamaguiConfig } from "@/tamagui.config"
+import { AppToastProvider } from "components/AppToastProvider"
+import { tamaguiConfig } from "tamagui.config"
 import {
     Button,
     Dialog,
@@ -22,7 +22,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context"
 SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
-    const { top } = useSafeAreaInsets()
+    const { top, right, left, bottom } = useSafeAreaInsets()
 
     const [loaded] = useFonts({
         Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
@@ -42,7 +42,14 @@ export default function RootLayout() {
     return (
         <TamaguiProvider config={tamaguiConfig} defaultTheme="light">
             <ThemeProvider value={DefaultTheme}>
-                <AppToastProvider>
+                <AppToastProvider
+                    safeAreaInsets={{
+                        top,
+                        right,
+                        left,
+                        bottom,
+                    }}
+                >
                     <Stack
                         screenOptions={{
                             header: () => <Header safeAreaTop={top} />,

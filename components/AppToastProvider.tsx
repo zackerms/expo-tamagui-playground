@@ -7,10 +7,19 @@ import {
     useToastState,
 } from "@tamagui/toast"
 import { PortalProvider, XStack, YStack } from "tamagui"
-import { useSafeAreaInsets } from "react-native-safe-area-context"
 
-export function AppToastProvider({ children }: { children?: ReactNode }) {
-    const { left, top, right } = useSafeAreaInsets()
+export function AppToastProvider({
+    safeAreaInsets = { left: 0, top: 0, right: 0, bottom: 0 },
+    children,
+}: {
+    safeAreaInsets?: {
+        left: number
+        top: number
+        right: number
+        bottom: number
+    }
+    children?: ReactNode
+}) {
     return (
         <ToastProvider burntOptions={{ from: "bottom" }}>
             <PortalProvider shouldAddRootHost>
@@ -19,9 +28,9 @@ export function AppToastProvider({ children }: { children?: ReactNode }) {
                 <ToastViewport
                     portalToRoot={false}
                     zIndex={2}
-                    top={top + 16}
-                    left={left + 16}
-                    right={right + 16}
+                    top={safeAreaInsets.top + 16}
+                    left={safeAreaInsets.left + 16}
+                    right={safeAreaInsets.right + 16}
                 />
             </PortalProvider>
         </ToastProvider>

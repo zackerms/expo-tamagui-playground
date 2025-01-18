@@ -1,15 +1,5 @@
-import { useToastController } from "@tamagui/toast"
 import { ReactNode, useState } from "react"
-import {
-    Text,
-    YStack,
-    Button,
-    Image,
-    View,
-    ScrollView,
-    Dialog,
-    Portal,
-} from "tamagui"
+import { Text, YStack, Button, ScrollView, Dialog } from "tamagui"
 
 export default function HomeScreen() {
     return (
