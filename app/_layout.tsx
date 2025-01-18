@@ -11,6 +11,7 @@ import { tamaguiConfig } from "tamagui.config"
 import {
     Button,
     Dialog,
+    Popover,
     Text,
     useWindowDimensions,
     View,
@@ -66,6 +67,7 @@ export default function RootLayout() {
 
 const Header = ({ safeAreaTop }: { safeAreaTop: number }) => {
     const { height, width } = useWindowDimensions()
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
     const [isDialogOpen, setIsDialogOpen] = useState(false)
 
     return (
@@ -77,7 +79,7 @@ const Header = ({ safeAreaTop }: { safeAreaTop: number }) => {
         >
             <YStack
                 alignItems="center"
-                onPress={() => setIsDialogOpen(true)}
+                onPress={() => setIsPopoverOpen(true)}
                 tag="button"
             >
                 <Text
@@ -88,8 +90,47 @@ const Header = ({ safeAreaTop }: { safeAreaTop: number }) => {
                 >
                     Expo 🤝 Tamagui
                 </Text>
-                <Text>Click here to see the author</Text>
+                <Text>Click here to see the menu</Text>
             </YStack>
+            <Popover
+                open={isPopoverOpen}
+                onOpenChange={(open) => setIsPopoverOpen(open)}
+                placement="bottom-end"
+                offset={{ mainAxis: 0 }}
+            >
+                {/* tamagui 1.115 以下だと、Trigger を配置しないと、Navigation Bar上で Popover を表示することができない */}
+                <Popover.Trigger>
+                    <View />
+                </Popover.Trigger>
+                <Popover.Content
+                    backgroundColor="white"
+                    shadowColor="#96a3b31a"
+                    shadowOffset={{ width: 0, height: 8 }}
+                    shadowRadius={28}
+                    borderRadius={16}
+                    padding={0}
+                    enterStyle={{ y: 10, opacity: 0 }}
+                    exitStyle={{ y: 10, opacity: 0 }}
+                    animation={[
+                        "quickest",
+                        {
+                            opacity: {
+                                overshootClamping: true,
+                            },
+                        },
+                    ]}
+                >
+                    <YStack gap={8} padding={16}>
+                        <Text fontSize={16} fontWeight="bold">
+                            Popover
+                        </Text>
+                        <Text fontSize={14}>
+                            This is a popover. It can be placed in any
+                            direction.
+                        </Text>
+                    </YStack>
+                </Popover.Content>
+            </Popover>
             <Dialog
                 modal={true}
                 open={isDialogOpen}
