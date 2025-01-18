@@ -1,17 +1,21 @@
 import { useToastController } from "@tamagui/toast"
-import { ReactNode } from "react"
-import { Text, YStack, Button, Image, View } from "tamagui"
+import { ReactNode, useState } from "react"
+import {
+    Text,
+    YStack,
+    Button,
+    Image,
+    View,
+    ScrollView,
+    Dialog,
+    Portal,
+} from "tamagui"
 
 export default function HomeScreen() {
     return (
-        <View flex={1} backgroundColor="black">
-            <Image
-                src="https://picsum.photos/1000"
-                w="100%"
-                h="100%"
-                resizeMode="cover"
-            />
-        </View>
+        <ScrollView flex={1}>
+            <SectionDialog />
+        </ScrollView>
     )
 }
 
@@ -26,48 +30,37 @@ function Section({ title, children }: { title: string; children?: ReactNode }) {
     )
 }
 
-function SectionToast() {
-    const toast = useToastController()
+function SectionDialog() {
+    const [isOpen, setIsOpen] = useState(false)
     return (
-        <Section title="Toast">
-            <YStack gap={8}>
-                <Button
-                    color="white"
-                    backgroundColor="$blue10"
-                    onPress={() =>
-                        toast.show("Info Toast", {
-                            preset: "info",
-                            duration: 3000,
-                        })
-                    }
-                >
-                    Info
-                </Button>
-                <Button
-                    color="white"
-                    backgroundColor="$green10"
-                    onPress={() =>
-                        toast.show("Success Toast", {
-                            preset: "success",
-                            duration: 3000,
-                        })
-                    }
-                >
-                    Success
-                </Button>
-                <Button
-                    color="white"
-                    backgroundColor="$red10"
-                    onPress={() =>
-                        toast.show("Error Toast", {
-                            preset: "error",
-                            duration: 3000,
-                        })
-                    }
-                >
-                    Error
-                </Button>
-            </YStack>
+        <Section title="Dialog">
+            <Button
+                color="white"
+                backgroundColor="$blue10"
+                onPress={() => setIsOpen(true)}
+            >
+                Open Dialog
+            </Button>
+            <Dialog modal={true} open={isOpen} onOpenChange={setIsOpen}>
+                <Dialog.Portal>
+                    <Dialog.Overlay key="overlay" />
+                    <Dialog.Content key="content" backgroundColor="white">
+                        <YStack padding={16} gap={16}>
+                            <Text fontSize={20} fontWeight="bold">
+                                Dialog
+                            </Text>
+                            <Text>This is a dialog</Text>
+                            <Button
+                                color="white"
+                                backgroundColor="$blue10"
+                                onPress={() => setIsOpen(false)}
+                            >
+                                Close
+                            </Button>
+                        </YStack>
+                    </Dialog.Content>
+                </Dialog.Portal>
+            </Dialog>
         </Section>
     )
 }

@@ -27,7 +27,7 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="full"
                 options={{
-                    title: "Full",
+                    title: "Scroll-View",
                     headerShown: false,
                 }}
             />

@@ -3,10 +3,10 @@
     "main": "expo-router/entry",
     "version": "1.0.0",
     "scripts": {
-        "start": "expo start",
-        "reset-project": "node ./scripts/reset-project.js",
+        "native": "expo start",
         "android": "expo start --android",
         "ios": "expo start --ios",
+        "web": "next dev",
         "lint": "expo lint",
         "format": "prettier --no-semi --tab-width 4 --write \"**/*.{ts,tsx}\""
     },
@@ -31,6 +31,7 @@
         "expo-symbols": "~0.1.5",
         "expo-system-ui": "~3.0.7",
         "expo-web-browser": "~13.0.3",
+        "next": "^15.1.5",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-native": "0.74.5",
