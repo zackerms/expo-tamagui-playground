@@ -70,7 +70,7 @@ export const ToastComponent = memo(function ToastComponent() {
             y={0}
             opacity={1}
             scale={1}
-            animation="quicker"
+            animation="quick"
             viewportName={currentToast.viewportName}
             unstyled
             width="100%"

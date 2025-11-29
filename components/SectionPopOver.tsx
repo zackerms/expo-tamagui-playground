@@ -21,7 +21,7 @@ export function SectionPopOver() {
                     enterStyle={{ y: 10, opacity: 0 }}
                     exitStyle={{ y: 10, opacity: 0 }}
                     animation={[
-                        "quickest",
+                        "quick",
                         {
                             opacity: {
                                 overshootClamping: true,

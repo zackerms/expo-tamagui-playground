@@ -1,5 +1,5 @@
 import { createTamagui } from "@tamagui/core"
-import { config } from "@tamagui/config/v3"
+import { config } from "@tamagui/config/v2"
 
 export const tamaguiConfig = createTamagui(config)
 export type AppConfig = typeof tamaguiConfig
