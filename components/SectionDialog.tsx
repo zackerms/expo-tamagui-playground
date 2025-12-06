@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { Button, Dialog, Text, YStack } from "tamagui"
+import { Button, Dialog, Input, Text, YStack } from "tamagui"
 import { Section } from "components/Section"
 
 export function SectionDialog() {
     const [isOpen, setIsOpen] = useState(false)
+    const [inputValue, setInputValue] = useState("")
     return (
         <Section title="Dialog">
             <Button
@@ -21,7 +22,21 @@ export function SectionDialog() {
                             <Text fontSize={20} fontWeight="bold">
                                 Dialog
                             </Text>
-                            <Text>This is a dialog</Text>
+                            <Text>This is a dialog with an input field</Text>
+                            <Input
+                                placeholder="Enter text here..."
+                                value={inputValue}
+                                onChangeText={setInputValue}
+                                borderWidth={1}
+                                borderColor="$gray8"
+                                padding={12}
+                                borderRadius={8}
+                            />
+                            {inputValue ? (
+                                <Text color="$gray11">
+                                    You entered: {inputValue}
+                                </Text>
+                            ) : null}
                             <Button
                                 color="white"
                                 backgroundColor="$blue10"
