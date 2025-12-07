@@ -1,6 +1,5 @@
 import {withTamagui as tamagui} from '@tamagui/next-plugin';
 import withPlugins from 'next-compose-plugins';
-import {withExpo} from '@expo/next-adapter';
 import transpileModule from "next-transpile-modules";
 
 const withTamagui = tamagui({
@@ -29,6 +28,5 @@ export default withPlugins([
     // transpilePackages
     // Cannot react undefinedというエラーが発生する
     withTranspileModules,
-    [withExpo, { projectRoot: __dirname }],
     withTamagui,
 ], nextConfig);
