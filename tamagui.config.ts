@@ -7,3 +7,5 @@ export type AppConfig = typeof tamaguiConfig
 declare module "tamagui" {
     interface TamaguiCustomConfig extends AppConfig {}
 }
+
+export default tamaguiConfig

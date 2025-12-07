@@ -6,7 +6,7 @@ import NextDocument, {
     NextScript,
 } from "next/document"
 
-import { tamaguiConfig } from "tamagui.config"
+import tamaguiConfig from "tamagui.config"
 
 export default class Document extends NextDocument {
     static async getInitialProps(ctx: DocumentContext) {
