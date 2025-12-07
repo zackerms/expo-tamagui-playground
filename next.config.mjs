@@ -15,7 +15,6 @@ const withTranspileModules = transpileModule([
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    webpack5: true,
     // https://docs.expo.dev/guides/using-nextjs/#transpiling-modules
     transpilePackages: [
         "react-native",
