@@ -4,6 +4,7 @@ import { SectionToast } from "components/SectionToast"
 import { SectionDialog } from "components/SectionDialog"
 import { SectionPopOver } from "components/SectionPopOver"
 import { SectionNavigation } from "components/SectionNavigation"
+import { GetServerSideProps } from "next"
 
 export default function Page() {
     return (
@@ -23,4 +24,10 @@ export default function Page() {
             <SectionNavigation />
         </YStack>
     )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    return {
+        props: {},
+    }
 }
